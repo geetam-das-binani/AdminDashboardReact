@@ -3,8 +3,9 @@
 	flex: 1;
 	padding: 10px;
 	justify-content: space-between;
-	-webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-	box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+		rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 	border-radius: 10px;
 	height: 100px;
 
@@ -38,6 +39,15 @@
 			&.positive {
 				color: green;
 			}
+			&.negative {
+				color: red;
+			}
+		}
+		.icon {
+			font-size: 18px;
+			padding: 5px;
+			border-radius: 5px;
+			align-self: flex-end;
 		}
 	}
 }
