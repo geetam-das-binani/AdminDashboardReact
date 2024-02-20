@@ -4,50 +4,49 @@ import Login from "../pages/Login/Login";
 import List from "../pages/List/List";
 import Single from "../pages/Single/Single";
 import New from "../pages/New/New";
-import App from "../App";
+import UsersLists from "../components/Users/UsersLists";
 
 export const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Home />,
+	},
+	{
+		path: "login",
+		element: <Login />,
+	},
+	{
+		path: "/users",
+		element: <UsersLists />,
 		children: [
 			{
-				path: "login",
-				element: <Login />,
+				path: "",
+				element: <List />,
 			},
 			{
-				path: "users",
-				children: [
-					{
-						path: "",
-						element: <List />,
-					},
-					{
-						path: ":userId",
-						element: <Single />,
-					},
-					{
-						path: "new",
-						element: <New />,
-					},
-				],
+				path: ":userId",
+				element: <Single />,
 			},
 			{
-				path: "products",
-				children: [
-					{
-						path: "",
-						element: <List />,
-					},
-					{
-						path: ":productId",
-						element: <Single />,
-					},
-					{
-						path: "new",
-						element: <New />,
-					},
-				],
+				path: "new",
+				element: <New />,
+			},
+		],
+	},
+	{
+		path: "products",
+		children: [
+			{
+				path: "",
+				element: <List />,
+			},
+			{
+				path: ":productId",
+				element: <Single />,
+			},
+			{
+				path: "new",
+				element: <New />,
 			},
 		],
 	},
