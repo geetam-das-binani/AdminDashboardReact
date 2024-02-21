@@ -1,0 +1,74 @@
+.singleTop {
+	padding: 20px;
+	display: flex;
+	gap: 20px;
+
+	.left {
+		position: relative;
+		flex: 1;
+		padding: 20px;
+		box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+			rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+		.editButton {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 5px;
+			font-style: 12px;
+			color: #7451f8;
+			background: #7551f818;
+			cursor: pointer;
+			border-radius: 0px 0px 0px 5px;
+		}
+		.item {
+			display: flex;
+			gap: 25px;
+
+			.itemImg {
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				object-fit: cover;
+			}
+
+			.details {
+				.itemTitle {
+					margin-bottom: 10px;
+					color: #555;
+				}
+				.detailItem {
+					margin-bottom: 10px;
+					font-size: 14px;
+					display: flex;
+
+					.itemKey {
+						font-weight: bold;
+						color: gray;
+						margin-right: 5px;
+					}
+					.itemValue {
+						font-weight: 300;
+					}
+				}
+			}
+		}
+	}
+
+	.right {
+		flex: 2;
+		box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+			rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+	}
+}
+
+.bottom {
+	padding: 20px;
+	margin: 10px 20px;
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+		rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+	.title {
+		font-size: 16px;
+		color: lightgray;
+		margin-bottom: 20px;
+	}
+}
