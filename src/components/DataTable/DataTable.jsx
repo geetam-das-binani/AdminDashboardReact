@@ -1,6 +1,7 @@
 import "./datatable.scss";
 import { userColumns, userRows } from "../../dataSource";
 import { DataGrid } from "@mui/x-data-grid";
+import { Link } from "react-router-dom";
 const DataTable = () => {
 	const actionsColumns = [
 		{
@@ -10,12 +11,14 @@ const DataTable = () => {
 			renderCell: (params) => {
 				return (
 					<div className="cellAction">
-						<div
-							className="viewButton"
-							onClick={() => handleView(params.row.id)}
-						>
-							View
-						</div>
+						<Link to={"/users/test"} style={{ textDecoration: "none" }}>
+							<div
+								className="viewButton"
+								onClick={() => handleView(params.row.id)}
+							>
+								View
+							</div>
+						</Link>
 						<div
 							className="deleteButton"
 							onClick={() => handleDelete(params.row.id)}
@@ -28,20 +31,32 @@ const DataTable = () => {
 		},
 	];
 	return (
-		<DataGrid
-			rows={userRows}
-			columns={[...userColumns, ...actionsColumns]}
-			initialState={{
-				pagination: {
-					paginationModel: {
-						pageSize: 5,
+		<>
+			<div className="dataTableTitle">
+				Add New User
+				<Link
+					className="link"
+					style={{ textDecoration: "none" }}
+					to={"/users/new"}
+				>
+					Add New
+				</Link>
+			</div>
+
+			<DataGrid
+				rows={userRows}
+				columns={[...userColumns, ...actionsColumns]}
+				initialState={{
+					pagination: {
+						paginationModel: {
+							pageSize: 5,
+						},
 					},
-				},
-			}}
-			checkboxSelection
-			// rowsPerPageOptions={[10]}
-			pageSizeOptions={[8]}
-		/>
+				}}
+				checkboxSelection
+				pageSizeOptions={[8]}
+			/>
+		</>
 	);
 };
 

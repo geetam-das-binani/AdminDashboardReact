@@ -1,10 +1,12 @@
 import "./sidebar.scss";
-
+import { Link } from "react-router-dom";
 const Sidebar = () => {
 	return (
 		<div className="sidebar">
 			<div className="top">
-				<span className="logo">Admin</span>
+				<Link style={{ textDecoration: "none" }} to={"/"}>
+					<span className="logo">Admin</span>
+				</Link>
 			</div>
 			<hr />
 			<div className="center">
@@ -15,14 +17,20 @@ const Sidebar = () => {
 						<span>Dashboard</span>
 					</li>
 					<p className="title">LISTS</p>
-					<li>
-						<i className="ri-user-line icon"></i>
-						<span>Users</span>
-					</li>
-					<li>
-						<i className="ri-store-3-fill icon"></i>
-						<span>Products</span>
-					</li>
+					<Link style={{ textDecoration: "none" }} to={"/users"}>
+						<li>
+							<i className="ri-user-line icon"></i>
+							<span>Users</span>
+						</li>
+					</Link>
+
+					<Link style={{ textDecoration: "none" }} to={"/products"}>
+						<li>
+							<i className="ri-store-3-fill icon"></i>
+							<span>Products</span>
+						</li>
+					</Link>
+
 					<li>
 						<i className="ri-store-3-line icon"></i>
 						<span>Orders</span>

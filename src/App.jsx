@@ -1,15 +1,10 @@
 import React from "react";
-
-import Sidebar from "./components/Sidebar/Sidebar";
-import Navbar from "./components/Navbar/Navbar";
 import { Outlet } from "react-router-dom";
-
+import "./style/dark.scss";
 const App = () => {
 	return (
-		<div className="App">
-			{/* <Navbar /> */}
+		<div className="app dark">
 			<Outlet />
-			<Sidebar />
 		</div>
 	);
 };
