@@ -11,7 +11,7 @@ const Featured = () => {
 	return (
 		<div className="featured">
 			<div className="top">
-				<div className="title">Total Revenue</div>
+				<h1 className="title">Total Revenue</h1>
 				<MoreVert fontSize="small" />
 			</div>
 			<div className="bottom">
@@ -21,28 +21,27 @@ const Featured = () => {
 				<p className="title">Total sales made today</p>
 				<p className="amount">$420</p>
 				<p className="desc">
-					Previous transactions Processing.Last payment may not be included
+					Previous transactions processing. Last payments may not be included.
 				</p>
-
 				<div className="summary">
 					<div className="item">
 						<div className="itemTitle">Target</div>
-						<div className="itemResult ">
+						<div className="itemResult negative">
 							<KeyboardArrowDown fontSize="small" />
 							<div className="resultAmount">$12.4k</div>
 						</div>
 					</div>
 					<div className="item">
-						<div className="itemTitle">Last week</div>
-						<div className="itemResult positive ">
+						<div className="itemTitle">Last Week</div>
+						<div className="itemResult positive">
 							<KeyboardArrowUp fontSize="small" />
 							<div className="resultAmount">$12.4k</div>
 						</div>
-					</div>{" "}
+					</div>
 					<div className="item">
-						<div className="itemTitle">Month</div>
-						<div className="itemResult ">
-							<KeyboardArrowDown fontSize="small" />
+						<div className="itemTitle">Last Month</div>
+						<div className="itemResult positive">
+							<KeyboardArrowUp fontSize="small" />
 							<div className="resultAmount">$12.4k</div>
 						</div>
 					</div>

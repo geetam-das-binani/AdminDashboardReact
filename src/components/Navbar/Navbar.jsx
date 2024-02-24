@@ -6,7 +6,9 @@ import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ListIcon from "@mui/icons-material/List";
+import { useStateContext } from "../../Context/Context";
 const Navbar = () => {
+	const { toggleMode } = useStateContext();
 	return (
 		<div className="navbar">
 			<div className="wrapper">
@@ -19,7 +21,7 @@ const Navbar = () => {
 						<LanguageIcon className="icon" />
 					</div>
 					<div className="item">
-						<DarkModeIcon className="icon" />
+						<DarkModeIcon onClick={toggleMode} className="icon" />
 					</div>{" "}
 					<div className="item">
 						<FullscreenExitIcon className="icon" />

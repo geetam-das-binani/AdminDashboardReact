@@ -1,6 +1,8 @@
 import "./sidebar.scss";
 import { Link } from "react-router-dom";
+import { useStateContext } from "../../Context/Context";
 const Sidebar = () => {
+	const { handleMode } = useStateContext();
 	return (
 		<div className="sidebar">
 			<div className="top">
@@ -12,10 +14,12 @@ const Sidebar = () => {
 			<div className="center">
 				<ul>
 					<p className="title">MAIN</p>
-					<li>
-						<i className="ri-dashboard-fill icon"></i>
-						<span>Dashboard</span>
-					</li>
+					<Link style={{ textDecoration: "none" }} to={"/"}>
+						<li>
+							<i className="ri-dashboard-fill icon"></i>
+							<span>Dashboard</span>
+						</li>
+					</Link>
 					<p className="title">LISTS</p>
 					<Link style={{ textDecoration: "none" }} to={"/users"}>
 						<li>
@@ -35,10 +39,7 @@ const Sidebar = () => {
 						<i className="ri-store-3-line icon"></i>
 						<span>Orders</span>
 					</li>
-					<li>
-						<i className="ri-truck-fill icon"></i>
-						<span>Delivery</span>
-					</li>
+
 					<p className="title">USEFUL</p>
 					<li>
 						<i className="ri-bar-chart-box-line icon"></i>
@@ -61,20 +62,11 @@ const Sidebar = () => {
 						<i className="ri-settings-2-line icon"></i>
 						<span>Settings</span>
 					</li>
-					<p className="title">USER</p>
-					<li>
-						<i className="ri-profile-line icon"></i>
-						<span>Profile</span>
-					</li>
-					<li>
-						<i className="ri-logout-box-r-fill icon"></i>
-						<span>Logout</span>
-					</li>
 				</ul>
 			</div>
 			<div className="bottom">
-				<div className="colorOption"></div>
-				<div className="colorOption"></div>
+				<div onClick={() => handleMode("light")} className="colorOption"></div>
+				<div onClick={() => handleMode("dark")} className="colorOption"></div>
 			</div>
 		</div>
 	);

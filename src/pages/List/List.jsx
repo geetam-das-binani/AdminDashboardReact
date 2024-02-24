@@ -1,10 +1,10 @@
 import DataTable from "../../components/DataTable/DataTable";
 import "./list.scss";
 
-const List = () => {
+const List = ({ title, path }) => {
 	return (
 		<div className="datatable">
-			<DataTable />
+			<DataTable title={title} path={path} />
 		</div>
 	);
 };

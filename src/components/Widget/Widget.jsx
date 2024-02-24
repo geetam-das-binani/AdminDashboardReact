@@ -1,22 +1,29 @@
 import {
 	AccountBalanceOutlined,
+	ArrowDownward,
 	ShoppingCartOutlined,
 } from "@mui/icons-material";
 import "./widgets.scss";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Person2Icon from "@mui/icons-material/Person2";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import { useStateContext } from "../../Context/Context";
+import { Link } from "react-router-dom";
+
 const Widget = ({ type }) => {
+	const { alluserRows, allproductRows } = useStateContext();
 	let data;
 
-	const amount = 100;
-	const diff = 20;
 	switch (type) {
 		case "user":
 			data = {
 				title: "USERS",
 				isMoney: false,
 				link: "See all users",
+				url: "/users",
+				diff: 10,
+
+				totalUsers: alluserRows.length,
 				icon: (
 					<Person2Icon
 						style={{
@@ -28,11 +35,14 @@ const Widget = ({ type }) => {
 				),
 			};
 			break;
-		case "order":
+		case "products":
 			data = {
-				title: "ORDERS",
+				title: "PRODUCTS",
 				isMoney: false,
-				link: "View All Orders",
+				link: "View All products",
+				url: "/products",
+				diff: "20",
+				totalProducts: allproductRows.length,
 				icon: (
 					<ShoppingCartOutlined
 						style={{
@@ -49,6 +59,7 @@ const Widget = ({ type }) => {
 				title: "EARNINGS",
 				isMoney: true,
 				link: "View net earnings",
+				diff: 18,
 				icon: (
 					<MonetizationOnIcon
 						style={{
@@ -65,6 +76,7 @@ const Widget = ({ type }) => {
 				title: "BALANCE",
 				isMoney: true,
 				link: "See details",
+				diff: 26,
 				icon: (
 					<AccountBalanceOutlined
 						style={{
@@ -86,14 +98,26 @@ const Widget = ({ type }) => {
 				<span className="title">{data.title}</span>
 				<span className="counter">
 					{data.isMoney && "$"}
-					{amount}
+					{data.isMoney
+						? "100"
+						: data.title === "USERS"
+						? data.totalUsers
+						: data.totalProducts}
 				</span>
-				<span className="link">{data.link}</span>
+				<Link
+					to={data?.url || "#"}
+					style={{ textDecoration: "none", color: "inherit" }}
+					className="link"
+				>
+					{data.link}
+				</Link>
 			</div>
 			<div className="right">
-				<div className="percentage positive">
-					<ArrowUpwardIcon />
-					{diff}%
+				<div
+					className={`percentage ${data.diff >= 20 ? "positive" : "negative"}`}
+				>
+					{data.diff >= 20 ? <ArrowUpwardIcon /> : <ArrowDownward />}
+					{data.diff}%
 				</div>
 				{data.icon}
 			</div>

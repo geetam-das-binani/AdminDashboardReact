@@ -1,8 +1,28 @@
 import "./datatable.scss";
-import { userColumns, userRows } from "../../dataSource";
+import { userColumns, productColumns } from "../../dataSource";
 import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
-const DataTable = () => {
+import { useEffect, useState } from "react";
+import { useStateContext } from "../../Context/Context";
+
+const DataTable = ({ title, path }) => {
+	const { alluserRows, allproductRows } = useStateContext();
+	const [rows, setRows] = useState([]);
+	const [columns, setColumns] = useState([]);
+
+	const handleDelete = (userId) =>
+		setRows(rows.filter((row) => row.id !== parseInt(userId)));
+
+	useEffect(() => {
+		if (title === "Add New User") {
+			setRows(alluserRows);
+			setColumns(userColumns);
+		} else {
+			setRows(allproductRows);
+			setColumns(productColumns);
+		}
+	}, [title, allproductRows, alluserRows]);
+
 	const actionsColumns = [
 		{
 			field: "action",
@@ -11,13 +31,13 @@ const DataTable = () => {
 			renderCell: (params) => {
 				return (
 					<div className="cellAction">
-						<Link to={"/users/test"} style={{ textDecoration: "none" }}>
-							<div
-								className="viewButton"
-								onClick={() => handleView(params.row.id)}
-							>
-								View
-							</div>
+						<Link
+							to={`/${path === "users" ? "users" : "products"}/${
+								params.row.id
+							}`}
+							style={{ textDecoration: "none" }}
+						>
+							<div className="viewButton">View</div>
 						</Link>
 						<div
 							className="deleteButton"
@@ -32,20 +52,23 @@ const DataTable = () => {
 	];
 	return (
 		<>
-			<div className="dataTableTitle">
-				Add New User
-				<Link
-					className="link"
-					style={{ textDecoration: "none" }}
-					to={"/users/new"}
-				>
-					Add New
-				</Link>
-			</div>
+			{title && (
+				<div className="dataTableTitle">
+					{title}
+					<Link
+						className="link"
+						style={{ textDecoration: "none" }}
+						to={`/${path === "users" ? "users" : "products"}/new`}
+					>
+						{title === "Add New User" ? "Add New" : "Add New"}
+					</Link>
+				</div>
+			)}
 
 			<DataGrid
-				rows={userRows}
-				columns={[...userColumns, ...actionsColumns]}
+				className="datagrid"
+				rows={rows}
+				columns={[...columns, ...actionsColumns]}
 				initialState={{
 					pagination: {
 						paginationModel: {

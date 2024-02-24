@@ -2,12 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import List from "../pages/List/List";
-import Single from "../pages/Single/Single";
+import SingleUser from "../pages/Single/SingleUser";
 import New from "../pages/New/New";
 import UsersLists from "../components/Users/UsersLists";
 import ProductsLists from "../components/Products/ProductsLists.jsx";
 import { productInputs, userInputs } from "../formSource";
 import App from "../App.jsx";
+import SingleProduct from "../pages/Single/SingleProduct";
 
 export const router = createBrowserRouter([
 	{
@@ -25,11 +26,11 @@ export const router = createBrowserRouter([
 				children: [
 					{
 						path: "",
-						element: <List />,
+						element: <List title={"Add New User"} path={"users"} />,
 					},
 					{
 						path: ":userId",
-						element: <Single />,
+						element: <SingleUser />,
 					},
 					{
 						path: "new",
@@ -43,11 +44,11 @@ export const router = createBrowserRouter([
 				children: [
 					{
 						path: "",
-						element: <List />,
+						element: <List title={"Add New Product"} path={"products"} />,
 					},
 					{
 						path: ":productId",
-						element: <Single />,
+						element: <SingleProduct />,
 					},
 					{
 						path: "new",
