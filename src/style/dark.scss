@@ -70,10 +70,21 @@
 			color: gray;
 			border: none;
 			.viewButton,
-			.deleteButton,
-			.cellWithStatus {
+			.deleteButton {
 				color: gray;
 				border: none;
+			}
+		}
+
+		.cell {
+			&.processing {
+				color: red !important;
+			}
+			&.Shipped {
+				color: aqua !important;
+			}
+			&.Delivered {
+				color: green !important;
 			}
 		}
 	}

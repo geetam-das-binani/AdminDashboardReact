@@ -35,6 +35,19 @@ const Orders = () => {
 	}, [rows]);
 	const actionsColumns = [
 		{
+			field: "status",
+			headerName: "Status",
+			width: 100,
+			renderCell: (params) => {
+				return (
+					<div className={`cell ${params.row.status}`}>
+						<div>{params.row.status}</div>
+					</div>
+				);
+			},
+		},
+
+		{
 			field: "action",
 			headerName: "Action",
 			width: 200,
@@ -63,6 +76,7 @@ const Orders = () => {
 	];
 	return (
 		<div className="orders">
+			<h2>All Orders</h2>
 			<DataGrid
 				className="datagrid"
 				rows={rows}

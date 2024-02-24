@@ -280,6 +280,7 @@ export const ordersRows = [
 		price: 15.99,
 		quantity: 1,
 		date: new Date(),
+		item: "Laptop",
 	},
 
 	{
@@ -289,6 +290,7 @@ export const ordersRows = [
 		price: 12.49,
 		quantity: 3,
 		date: new Date(),
+		item: "Headphone",
 	},
 	{
 		id: 3,
@@ -297,6 +299,7 @@ export const ordersRows = [
 		price: 29.99,
 		quantity: 2,
 		date: new Date(),
+		item: "Bluetooth speaker",
 	},
 	{
 		id: 4,
@@ -305,6 +308,7 @@ export const ordersRows = [
 		price: 20.79,
 		quantity: 1,
 		date: new Date(),
+		item: "Skin Care",
 	},
 	{
 		id: 5,
@@ -313,6 +317,7 @@ export const ordersRows = [
 		price: 18.99,
 		quantity: 4,
 		date: new Date(),
+		item: "Tv",
 	},
 	{
 		id: 6,
@@ -321,6 +326,7 @@ export const ordersRows = [
 		price: 24.99,
 		quantity: 2,
 		date: new Date(),
+		item: "Body Wash",
 	},
 ];
 export const ordersColumns = [
@@ -334,11 +340,8 @@ export const ordersColumns = [
 		headerName: "Email",
 		width: 230,
 	},
-	{
-		field: "status",
-		headerName: "Status",
-		width: 160,
-	},
-	{ field: "price", headerName: "Price", width: 160 },
-	{ field: "quantity", headerName: "Quantity", width: 160 },
+
+	{ field: "price", headerName: "Price", width: 80 },
+	{ field: "quantity", headerName: "Quantity", width: 70 },
+	{ field: "item", headerName: "Item", width: 160 },
 ];
