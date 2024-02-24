@@ -35,10 +35,12 @@ const Sidebar = () => {
 						</li>
 					</Link>
 
-					<li>
-						<i className="ri-store-3-line icon"></i>
-						<span>Orders</span>
-					</li>
+					<Link style={{ textDecoration: "none" }} to={"/orders"}>
+						<li>
+							<i className="ri-store-3-line icon"></i>
+							<span>Orders</span>
+						</li>
+					</Link>
 
 					<p className="title">USEFUL</p>
 					<li>

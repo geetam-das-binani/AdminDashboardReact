@@ -35,7 +35,7 @@ export const userColumns = [
 export const userRows = [
 	{
 		id: 1,
-		img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+		img: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
 
 		username: "Snow",
 		email: "1snow@gmail.com",
@@ -47,7 +47,7 @@ export const userRows = [
 	{
 		id: 2,
 		username: "Jamie Lannister",
-		img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+		img: "https://images.pexels.com/photos/1261822/pexels-photo-1261822.jpeg?auto=compress&cs=tinysrgb&w=600",
 		email: "2snow@gmail.com",
 
 		age: 42,
@@ -58,7 +58,7 @@ export const userRows = [
 	{
 		id: 3,
 		username: "Lannister",
-		img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+		img: "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=600",
 		email: "3snow@gmail.com",
 
 		age: 45,
@@ -69,7 +69,7 @@ export const userRows = [
 	{
 		id: 4,
 		username: "Stark",
-		img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+		img: "https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&w=600",
 		email: "4snow@gmail.com",
 
 		age: 16,
@@ -80,7 +80,7 @@ export const userRows = [
 	{
 		id: 5,
 		username: "Targaryen",
-		img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+		img: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=600",
 		email: "5snow@gmail.com",
 
 		age: 22,
@@ -102,7 +102,7 @@ export const userRows = [
 	{
 		id: 7,
 		username: "Clifford",
-		img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+		img: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=600",
 		email: "7snow@gmail.com",
 
 		age: 44,
@@ -113,7 +113,7 @@ export const userRows = [
 	{
 		id: 8,
 		username: "Frances",
-		img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+		img: "https://images.pexels.com/photos/868113/pexels-photo-868113.jpeg?auto=compress&cs=tinysrgb&w=600",
 		email: "8snow@gmail.com",
 
 		age: 36,
@@ -124,7 +124,7 @@ export const userRows = [
 	{
 		id: 9,
 		username: "Roxie",
-		img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+		img: "https://images.pexels.com/photos/761115/pexels-photo-761115.jpeg?auto=compress&cs=tinysrgb&w=600",
 		email: "snow@gmail.com",
 
 		age: 65,
@@ -135,7 +135,7 @@ export const userRows = [
 	{
 		id: 10,
 		username: "Roxie",
-		img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+		img: "https://images.pexels.com/photos/1270076/pexels-photo-1270076.jpeg?auto=compress&cs=tinysrgb&w=600",
 		email: "snow@gmail.com",
 
 		age: 65,
@@ -270,4 +270,75 @@ export const productColumns = [
 		headerName: "Category",
 		width: 160,
 	},
+];
+
+export const ordersRows = [
+	{
+		id: 1,
+		email: "snow123@gmail.com",
+		status: "processing",
+		price: 15.99,
+		quantity: 1,
+		date: new Date(),
+	},
+
+	{
+		id: 2,
+		email: "sunflower@example.com",
+		status: "processing",
+		price: 12.49,
+		quantity: 3,
+		date: new Date(),
+	},
+	{
+		id: 3,
+		email: "mountain@example.com",
+		status: "processing",
+		price: 29.99,
+		quantity: 2,
+		date: new Date(),
+	},
+	{
+		id: 4,
+		email: "river@example.com",
+		status: "processing",
+		price: 20.79,
+		quantity: 1,
+		date: new Date(),
+	},
+	{
+		id: 5,
+		email: "forest@example.com",
+		status: "processing",
+		price: 18.99,
+		quantity: 4,
+		date: new Date(),
+	},
+	{
+		id: 6,
+		email: "ocean@example.com",
+		status: "processing",
+		price: 24.99,
+		quantity: 2,
+		date: new Date(),
+	},
+];
+export const ordersColumns = [
+	{
+		field: "id",
+		headerName: "ID",
+		width: 70,
+	},
+	{
+		field: "email",
+		headerName: "Email",
+		width: 230,
+	},
+	{
+		field: "status",
+		headerName: "Status",
+		width: 160,
+	},
+	{ field: "price", headerName: "Price", width: 160 },
+	{ field: "quantity", headerName: "Quantity", width: 160 },
 ];
