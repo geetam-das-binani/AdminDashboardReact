@@ -2,14 +2,15 @@ import { useParams } from "react-router-dom";
 import "./single.scss";
 import React, { useEffect, useState } from "react";
 import Chart from "../../components/Chart/Chart";
-import List from "../List/List";
-import { productRows } from "../../dataSource";
+import { useStateContext } from "../../Context/Context";
+
 const SingleProduct = () => {
+	const { allproductRows } = useStateContext();
 	const { productId } = useParams();
 	const [prodDetails, setProdDetails] = useState({});
 
 	const handleSingleProduct = () => {
-		const prodData = productRows.filter(
+		const prodData = allproductRows.filter(
 			(prod) => prod.id === parseInt(productId)
 		);
 

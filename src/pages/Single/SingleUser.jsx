@@ -3,13 +3,16 @@ import "./single.scss";
 import React, { useEffect, useState } from "react";
 import Chart from "../../components/Chart/Chart";
 import List from "../List/List";
-import { userRows } from "../../dataSource";
+
+import { useStateContext } from "../../Context/Context";
+
 const Single = () => {
 	const { userId } = useParams();
+	const { alluserRows } = useStateContext();
 	const [userDetails, setUserDetails] = useState({});
 
 	const handleSingleUser = () => {
-		const userData = userRows.filter((user) => user.id === parseInt(userId));
+		const userData = alluserRows.filter((user) => user.id === parseInt(userId));
 
 		setUserDetails(userData[0]);
 	};
